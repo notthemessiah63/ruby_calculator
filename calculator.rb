@@ -18,13 +18,13 @@
 def basic_calc()
   system "clear"
   print "Enter first number"
-  first_num = gets.to_i
+  first_num = gets.to_f
   puts
   print "Enter operator - '+'  '-'  '/'  or  '*' "
   calc_operator = gets.chomp
   puts
   print "Enter second number - '+'  '-'  '/'  or  '*' "
-  last_num = gets.to_i
+  last_num = gets.to_f
   puts
   case calc_operator
     when '+'
@@ -54,25 +54,25 @@ def advanced_calc()
   case adv_calc
     when 1
       puts "Enter number"
-      first_num = gets.to_i
+      first_num = gets.to_f
       puts
       print "to the power of: "
-      last_num = gets.to_i
+      last_num = gets.to_f
       puts
       advanced_answer = first_num ** last_num
     when 2
       puts "Enter number"
-      first_num = gets.to_i
+      first_num = gets.to_f
       puts
       advanced_answer = Math.sqrt(first_num)
     when 3
         puts "Mortgage calculator:-"
         print "Enter interest rate (%) : "
-        int_rate = gets.to_i
+        int_rate = gets.to_f
         print "Enter number of payments : "
-        num_payments = gets.to_i
+        num_payments = gets.to_f
         print "Enter principal amount (£) : "
-        amount = gets.to_i
+        amount = gets.to_f
         answer = mortgage_calculator(int_rate,num_payments,amount)
         advanced_answer = "Your monthly payment is £#{answer}"
     when 4
@@ -80,18 +80,18 @@ def advanced_calc()
         puts "1) metric"
         puts "2) imperial"
         print "Enter Option: "
-        bmi_opt = gets.to_i
+        bmi_opt = gets.to_f
         advanced_answer = bmi_calculator(bmi_opt)
     when 5
         puts 'Trip calculator'
         print "Distance (miles) : "
-        distance = gets.to_i
+        distance = gets.to_f
         print "Speed (mph) : "
-        speed = gets.to_i
+        speed = gets.to_f
         print "Fuel price (per gallon) : "
-        fuel_price = gets.to_i
+        fuel_price = gets.to_f
         print "Your car economy MPG : "
-        car_mpg = gets.to_i
+        car_mpg = gets.to_f
         advanced_answer = trip_calculator(distance,speed,fuel_price,car_mpg)
     else  
   end
@@ -110,9 +110,9 @@ def bmi_calculator(units)
     multipier = 1
   end
   puts "Enter your weight in #{w_suff}"
-  weight = gets.to_i
+  weight = gets.to_f
   puts "Enter your height in #{h_suff}"
-  height = gets.to_i
+  height = gets.to_f
   advanced_answer = (weight / (height*height))*multipier
   return advanced_answer
 end
