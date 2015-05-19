@@ -37,7 +37,7 @@ def basic_calc()
       basic_answer = first_num * last_num
     else  
   end
-  puts "Result: #{basic_answer}"
+  puts "Result: #{basic_answer.round(2)}"
   wait = gets
 end
 # -------------------
@@ -64,7 +64,7 @@ def advanced_calc()
       puts "Enter number"
       first_num = gets.to_f
       puts
-      advanced_answer = Math.sqrt(first_num)
+      advanced_answer = Math.sqrt(first_num).round(2)
     when 3
         puts "Mortgage calculator:-"
         print "Enter interest rate (%) : "
@@ -114,7 +114,7 @@ def bmi_calculator(units)
   puts "Enter your height in #{h_suff}"
   height = gets.to_f
   advanced_answer = (weight / (height*height))*multipier
-  return advanced_answer
+  return advanced_answer.round(2)
 end
 
 def trip_calculator(distance,speed,fuel_price,car_mpg)
@@ -130,7 +130,7 @@ def trip_calculator(distance,speed,fuel_price,car_mpg)
   else
     t_suff = "hr"
   end
-  answer = "Your journey takes #{time} #{t_suff} and costs £#{trip_cost}"
+  answer = "Your journey takes #{time.round(1)} #{t_suff} and costs £#{trip_cost.round(2)}"
   return answer
 end
 
@@ -139,7 +139,7 @@ def mortgage_calculator(int_rate,num_payments,amount)
   ipn = ip ** num_payments
   divbit = (int_rate*ipn)/(ipn-1)
   answer = amount * divbit
-  return answer
+  return answer.round(2)
 end
 
 
